@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width", initial-scale="1">
+	<title>controlMaskSystem</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/controlMaskSystem.css">
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+	<script type="text/javascript" src="tensor.js"></script>  
+
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">CMS</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
+					<li><a href="#">조원</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">기술<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Tensorflow JavaScript</a></li>
+							<li><a href="#">Tensorflow/KERAS</a></li>
+							<li><a href="#">Tensorflow Lite</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">로그인</a></li>
+							<li><a href="#">회원가입</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<h3><br>
+		<strong>
+			<span style="color:#ff7f00; font-size:1.5em;"> &nbsp 마스크 쓰기 생활화</span><p></p>
+			<span style="color:#000000; font-size:1.5em;"> &nbsp 호로록조가 함께 합니다.</span><p></p>
+		</strong><br>
+	</h3>
+	<dl>
+		<dt> 
+		<p><strong> <span style="color:#000000; font-size:2.2em;"> &nbsp 마스크 출입 통제 시스템(Control Mask System)</span></strong></p>
+		</dt>
+		<dt><strong><span style="color:#000000; font-size:2.0em;"> &nbsp &nbsp 시스템 개요</span></strong><p></p></dt>
+		<dd><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 마스크 착용 여부를 판단하여 출입을 통제 하는 시스템 </span>
+		</dd><br>
+		
+		<dt><p><strong><span style="color:#000000; font-size:2.0em;">&nbsp &nbsp 사용 기술</span></strong></p></dt>
+		
+		<dd><A href="https://www.tensorflow.org/?hl=ko"> 
+		<span style="color:#666; font-size:1.5em;">&nbsp &nbsp &nbsp Tensorflow </span></A>
+		
+		<A href="https://www.tensorflow.org/guide/keras?hl=ko">
+		<span style="color:#666; font-size:1.5em;">  &nbsp &nbsp &nbsp Tensorflow keras</span></A>
+		 
+		<A href="https://www.tensorflow.org/lite?hl=ko"> 
+		<span style="color:#666; font-size:1.5em;">&nbsp &nbsp &nbsp Tensorflow lite</span></A></dd><br>
+	</dl>
+	<dl>
+		<dd><p><strong><span style="color:#000000; font-size:2.0em;"> &nbsp &nbsp  CMS 알아보기</span></strong></p>
+		<img class="media-object" src="images/flow.PNG" alt="Tensorflow JavaScript">
+		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 1.이미지 학습 : 수십 수천장의 학습 할 이미지를 수집합니다. </span></p>
+		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 2.모델링 : 학습 할 이미지를 가지고 데이터 모델을 구성한다.</span>
+		<span style="color:#666; font-size:1.5em;"> &nbsp (ex. 마스크 on, 마스크 off)</span></P>
+		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 3.모델 생성 : 이미지로 학습된 데이터 모델을 생성한다. </span></p>
+		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 4.모델 주입 : 생성된 모델에 새로운 이미지를 주입한다. </span></p>
+		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 5.마스크 탐지 : 마스크 on/off 결과를 확인한다. </span></p>
+		</dd>
+	</dl>
+
+	<footer style="background-color: #000000; color: #ffffff">
+		<div class="container">
+			<br>
+			<div class="row">
+				<div class="col-sm-2"><h4>Copyright &copy; 2020</h4><h4>호로록조(hororoc)</h4></div>
+				<div class="col-sm-3"><h4>호로록조 소개</h4><p>조장 : 박현석 프로<br> 조원 : 전용태 프로, 정보름 프로, 조영진 프로</p></div>
+				<div class="col-sm-3"><h4>네비게이션</h4>
+					<div class="list-group">
+						<a href="https://www.tensorflow.org/?hl=ko" class="list-group-item">Tensorflow</a>
+						<a href="https://www.tensorflow.org/guide/keras?hl=ko" class="list-group-item">Tensorflow keras</a>
+						<a href="https://www.tensorflow.org/lite?hl=ko" class="list-group-item">Tensorflow lite</a>
+					</div>
+				</div>
+				<div class="col-sm-3"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp;by Hororoc</h4></div>
+			</div>
+		</div>
+</body>
+</html>
