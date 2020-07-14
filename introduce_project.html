@@ -52,49 +52,156 @@
 			</div>
 		</div>
 	</nav>
-	<h3><br>
-		<strong>
-			<span style="color:#ff7f00; font-size:1.5em;"> &nbsp 마스크 쓰기 생활화</span><p></p>
-			<span style="color:#000000; font-size:1.5em;"> &nbsp 호로록조가 함께 합니다.</span><p></p>
-		</strong><br>
-	</h3>
-	<dl>
-		<dt> 
-		<p><strong> <span style="color:#000000; font-size:2.2em;"> &nbsp 마스크 출입 통제 시스템(Control Mask System)</span></strong></p>
-		</dt>
-		<dt><strong><span style="color:#000000; font-size:2.0em;"> &nbsp &nbsp 시스템 개요</span></strong><p></p></dt>
-		<dd><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 마스크 착용 여부를 판단하여 출입을 통제 하는 시스템 </span>
-		</dd><br>
+	
+	<style>
+	.max-small {
+	    width: auto; height: auto;
+	    max-width: 600px;
+	    max-height: 600px;
+	}
+	.one-lineheight {
+	    line-height:1.5
+	}
+	
+	.tensorsite-container {
+		margin: 80px auto;
+		max-width: 1420px;
+		width: 120%;
+	}
 		
-		<dt><p><strong><span style="color:#000000; font-size:2.0em;">&nbsp &nbsp 사용 기술</span></strong></p></dt>
+	.tensorsite-group__inner {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: -15px auto;
+	}
+	.tensorsite-block tensorsite-block--plain{
+    margin-bottom: 20px;
+    margin-top: 20px;
+	margin: 15px;
+    text-align: center;
+	}
+
+	.tensorsite-block--plain, .tensorsite-block--plain-links {
+    margin-bottom: 10px;
+    margin-top: 10px;
+	}
+	
+	.tensorsite-block .tensorsite-content__description {
+    font-family: "Roboto",sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+	}
+	</style>
+	<div style="none : 1px dashed #BDBDBD; width:950px; margin:auto;">
+	
+	
+	<br/>
+	<h1><center><strong>
+		<span style="color:#ff7f00; font-size:1.5em;"> 마스크 쓰기 생활화</span><p></p>
+		<span style="color:#000000; font-size:1.5em;"> 호로록조가 함께 합니다.</span><p></p>
+	</strong></center></h1>
+	<br/>
+	<br/>
+	<h2>마스크 출입 통제 시스템(Control Mask System)</h2>
+	<h5 class='one-lineheight'> 2019년 12월 중국 우한에서 처음 발생한 뒤 전 세계로 확산된, 새로운 유형의 코로나바이러스에 의한 호흡기 감염질환 코로나19</h5>
+	<h5 class='one-lineheight'>캐나다 연구팀의 연구 결과에 따르면 마스크를 착용하였을 시 마스크를 쓰지 않았을 때보다 감염 위험이 85%나 줄어드는 등
+	마스크 착용만으로도 바이러스 차단 효과가 매우 높아진다고 합니다. 그러므로 코로나19 확산 방지를 위해 마스크 착용은 일상생활에 반드시 필요합니다.</h5>
+	
+	<br/>
+	<h2>시스템 개요</h2>
+	
+	<h5 class='one-lineheight'>"덥고 습한 날씨로 마스크 착용을 꺼려하는 사람들", "기타의 사유로 마스크 착용을 하지 않는 사람들"로 인해 피해입는 마스크를 항상 착용하시는 분들을 위하여
+	마스크 착용 여부를 판단하여 출입을 통제하는 시스템을 만들었습니다.</h5>
 		
-		<dd><A href="https://www.tensorflow.org/?hl=ko"> 
-		<span style="color:#666; font-size:1.5em;">&nbsp &nbsp &nbsp Tensorflow </span></A>
+	
+        <div class="tensorsite-group__header">
+		<div class="tensorsite-content ">
 		
-		<A href="https://www.tensorflow.org/guide/keras?hl=ko">
-		<span style="color:#666; font-size:1.5em;">  &nbsp &nbsp &nbsp Tensorflow keras</span></A>
-		 
-		<A href="https://www.tensorflow.org/lite?hl=ko"> 
-		<span style="color:#666; font-size:1.5em;">&nbsp &nbsp &nbsp Tensorflow lite</span></A></dd><br>
-	</dl>
-	<dl>
-		<dd><p><strong><span style="color:#000000; font-size:2.0em;"> &nbsp &nbsp  CMS 알아보기</span></strong></p>
-		<img class="media-object" src="images/flow.PNG" alt="Tensorflow JavaScript">
-		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 1.이미지 학습 : 수십 수천장의 학습 할 이미지를 수집합니다. </span></p>
-		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 2.모델링 : 학습 할 이미지를 가지고 데이터 모델을 구성한다.</span>
-		<span style="color:#666; font-size:1.5em;"> &nbsp (ex. 마스크 on, 마스크 off)</span></P>
-		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 3.모델 생성 : 이미지로 학습된 데이터 모델을 생성한다. </span></p>
-		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 4.모델 주입 : 생성된 모델에 새로운 이미지를 주입한다. </span></p>
-		<p><span style="color:#666; font-size:1.5em;"> &nbsp &nbsp &nbsp 5.마스크 탐지 : 마스크 on/off 결과를 확인한다. </span></p>
-		</dd>
-	</dl>
+		<br/>
+		<h2 class="tensorsite-content__title  " id="사용 기술" data-text="사용 기술">
+		사용 기술</h2>
+		
+		<div class="tensorsite-content__description">
+        <p>마스크 출입 통제 시스템(Control Mask System)을 작업하며 학습하고, 참고하였던 기술들입니다.
+		</p></div>
+		
+		</div>
+		</div>
+		
+		<div class="tensorsite-group__inner">
+		<div class="tensorsite-block tensorsite-block--plain" style = "padding: 5px 150px 0px 3px;" >
+		
+			<div class="tensorsite-block__image-wrapper">
+			<A href="https://www.tensorflow.org/?hl=ko">
+			<img class="tensorsite-block__image" src="https://www.tensorflow.org/site-assets/images/marketing/home/model.svg?hl=ko" alt="">
+			</A>
+			</div>
+
+			<div class="tensorsite-content ">
+			<h4 class="tensorsite-content__title  " id="Tensorflow" data-text="Tensorflow">
+			<strong>Tensorflow</strong> </A></h4>
+			<div class="tensorsite-content__description">
+			<p>TensorFlow는 머신러닝을 위한 엔드 투 엔드 오픈소스 플랫폼입니다. 도구, 라이브러리, 커뮤니티 리소스로 구성된 포괄적이고 유연한 생태계를 통해 연구원들은 ML에서 첨단 기술을 구현할 수 있고 개발자들은 ML이 접목된 애플리케이션을 손쉽게 빌드 및 배포할 수 있습니다</p>
+			</div>
+			</div>
+		</div>
+
+		<div class="tensorsite-block tensorsite-block--plain" style = "padding: 5px 150px 0px 3px;">
+			<div class="tensorsite-block__image-wrapper">
+			<A href="https://www.tensorflow.org/guide/keras?hl=ko"> 
+			<img class="tensorsite-block__image" src="https://www.tensorflow.org/site-assets/images/marketing/home/robust.svg?hl=ko" alt="">
+			</A>
+			</div>
+
+
+			<div class="tensorsite-content ">
+			<h4 class="tensorsite-content__title  " id="Tensorflow keras" data-text="Tensorflow keras">
+			<strong>Tensorflow keras</strong></h4>
+			<div class="tensorsite-content__description">
+			<p>텐서플로의 딥러닝 모델 설계와 훈련을 위한 고수준(high-level) API입니다. 이는 빠른 프로토타이핑, 최첨단 기술의 연구 및 생산에 사용되며, 사용자 친화적, 모듈화 및 구성 가능성, 쉬운 확장의 장점이 있습니다.</p>
+			</div>
+			</div>
+		</div>
+		
+		<div class="tensorsite-block tensorsite-block--plain" style = "padding: 5px 150px 0px 3px;" >
+			<div class="tensorsite-block__image-wrapper">
+			<A href="https://www.tensorflow.org/lite?hl=ko">
+			<img class="tensorsite-block__image" src="https://www.tensorflow.org/site-assets/images/marketing/home/research.svg?hl=ko" alt="">
+			</A>
+			</div>
+
+
+			<div class="tensorsite-content ">
+			<h4 class="tensorsite-content__title  " id="Tensorflow lite" data-text="Tensorflow lite">
+			<strong>Tensorflow lite</strong></A></h4>
+			<div class="tensorsite-content__description">
+			<p>TensorFlow Lite는 개발자가 휴대기기, 내장형 기기 및 IoT 기기에서 TensorFlow 모델을 실행할 수 있도록 지원하는 도구 모음입니다. 기기 내 지연 시간이 짧고 바이너리 크기가 작은 머신러닝 추론을 지원합니다.</p>
+			</div>
+			</div>
+		</div>
+      </div>
+ 
+	<br/>
+	<h2>CMS 알아보기</h2>
+	<h5 class='one-lineheight'>마스크 출입 통제 시스템(Control Mask System)의 대략적인 플로우는 아래와 같습니다.</h5>
+	<img class="media-object" src="images/flow.PNG" alt="Tensorflow JavaScript">
+	<ul style="line-height:2">
+	<li><strong>1.이미지 학습</strong>: 수십 수천장의 학습 할 이미지를 수집합니다.</li> 
+	<li><strong>2.모델링</strong>: 학습 할 이미지를 가지고 데이터 모델을 구성한다. (ex. 마스크 on, 마스크 off)</li>
+	<li> <strong>3.모델 생성</strong>: 이미지로 학습된 데이터 모델을 생성한다.</li>
+	<li> <strong>4.모델 주입</strong>: 생성된 모델에 새로운 이미지를 주입한다.</li>
+	<li> <strong>5.마스크 탐지</strong>: 마스크 on/off 결과를 확인한다.</li>
+	</ul>
+	</div>	
+	<br/>
 
 	<footer style="background-color: #000000; color: #ffffff">
 		<div class="container">
 			<br>
 			<div class="row">
 				<div class="col-sm-2"><h4>Copyright &copy; 2020</h4><h4>호로록조(hororoc)</h4></div>
-				<div class="col-sm-3"><h4>호로록조 소개</h4><p>조장 : 박현석 프로<br> 조원 : 전용태 프로, 정보름 프로, 조영진 프로</p></div>
+				<div class="col-sm-3"><h4>호로록조 소개</h4><p>조장 : 박PRO<br> 조원 : 전PRO, 정PRO, 조PRO</p></div>
 				<div class="col-sm-3"><h4>네비게이션</h4>
 					<div class="list-group">
 						<a href="https://www.tensorflow.org/?hl=ko" class="list-group-item">Tensorflow</a>
