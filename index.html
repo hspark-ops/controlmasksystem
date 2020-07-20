@@ -10,14 +10,13 @@
 <body>
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
-	<style type="text/css">
-		.jumbotron {
-			background-image: url('images/tensorflow.jpg');
-			background-size: cover;
-			text-shadow: black 0.2em 0.2em 0.2em;
-			color: white;
-		}
-	</style>
+
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+	<script type="text/javascript" src="tensor.js"></script>  
+
+
+
 
 
 	<nav class="navbar navbar-default">
@@ -29,12 +28,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">Control Mask System</a>
+				<a class="navbar-brand" href="index.html">CMS</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="introduce_project.html">소개<span class="sr-only"></span></a></li>
-					<li><a href="introduce_hororoc.html">조원</a></li>
+					<li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
+					<li><a href="#">조원</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">기술<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -56,75 +55,126 @@
 			</div>
 		</div>
 	</nav>
-	<div class="container">
-		<div class="jumbotron">
-			<h1 class="text-center">Control Mask System</h1>
-			<p class="text-center">Machine Learning 을 이용하여 Mask On/Off 얼굴을 식별합니다.</p>
-			<p class="text-center"><a class="btn btn-primary btn-lg" href="tensorflow_js.html" role="button">ENTER</a></p>
-		</div>
-		<div class="row">
-				<div class="col-md-4">
-					<h4>Tensorflow JavaScript</h4>
-					<p>CMS - Tensorflow JavaScript + WebRTC 로 구성되어 웹캠과 연동하여 웹브라우저에서 작동합니다.</p>
-					<!--<p><a class="btn btn-default" data-target="#modal" data-toggle="modal">자세히 알아보기</a></p>-->
-					<p><a class="btn btn-default" href="tensorflow_js.html">자세히 알아보기</a></p>
-				</div>
-				<div class="col-md-4">
-					<h4>Tensorflow / KERAS</h4>
-					<p>CMS - Tensorflow 2.0 API 로 구성되어 로컬 PC에서 작동합니다.</p>
-					<p><a class="btn btn-default" href="python_keras.html">자세히 알아보기</a></p>
-				</div>
-				<div class="col-md-4">
-					<h4>Tensorflow Lite</h4>
-					<p>CMS - Tensorflow Lite 를 이용하여 Android Mobile 에서 작동합니다.</p>
-					<p><a class="btn btn-default" href="tensorflow_lite.html">자세히 알아보기</a></p>
-				</div>
-		</div>
+	
+	<style>
+	.max-small {
+	    width: auto; height: auto;
+	    max-width: 600px;
+	    max-height: 600px;
+	}
+	.one-lineheight {
+	    line-height:1.5
+	}
+	
+	.tensorsite-container {
+		margin: 80px auto;
+		max-width: 1420px;
+		width: 120%;
+	}
+		
+	.tensorsite-group__inner {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: -15px auto;
+	}
+	.tensorsite-block tensorsite-block--plain{
+    margin-bottom: 20px;
+    margin-top: 20px;
+	margin: 15px;
+    text-align: center;
+	}
 
-		<hr>
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<h3 class="panel-title"><span class="glyphicon glyphicon-pencil"></span>
-				&nbsp;&nbsp;사용한 기술목록</h3>
+	.tensorsite-block--plain, .tensorsite-block--plain-links {
+    margin-bottom: 10px;
+    margin-top: 10px;
+	}
+	
+	.tensorsite-block .tensorsite-content__description {
+    font-family: "Roboto",sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+	}
+	</style>
+	<div style="none : 1px dashed #BDBDBD; width:950px; margin:auto;">
+	
+	
+	<br/>
+	<h1><center><strong>
+		<span style="color:#ff7f00; font-size:1.5em;"> 호로록조 조원</span><p></p>
+	</strong></center></h1>
+	<br/>
+	<br/>
+		
+		<div class="tensorsite-group__inner">
+		
+		<p>
+		<div class="tensorsite-block tensorsite-block--plain" style = "padding: 5px 150px 0px 3px;" >
+			<div class="tensorsite-block__image-wrapper">
+			<img class="tensorsite-block__image" src="images/박프로.png" alt="" width='200' ">
 			</div>
-			<div class="penal-body">
 
-				<div class="media">
-					<div class="media-left">
-						<a href="#"><img class="media-object" src="images/1_.jpg" alt="Tensorflow JavaScript"></a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading"><a href="tensorflowjs.html">Tensorflow JavaScript</a>&nbsp;<span class="badge">New</span></h4>
-						Tensorflow JavaScript 는 ... 사용가능 합니다.
-					</div>
+			<div class="tensorsite-content ">
+			<h4 class="tensorsite-content__title  " id="Tensorflow" data-text="Tensorflow">
+			<strong>박 프로</strong> </A></h4>
+				<div class="tensorsite-content__description">
+					<p>예) 파일럿프로젝트 진행기간 회의록을 작성해왔으며 조원간 의사소통 / 의견조율에 기여함 . tensorflow / kera를 분석/검토하며 이런저런 기술을 습득.  차후 관심분야 & 해보고싶은것 : 어쩌구 저쩌구, </p>
 				</div>
-				<hr>
-				<div class="media">
-					<div class="media-left">
-						<a href="#"><img class="media-object" src="images/2_.jpg" alt="Tensorflow JavaScript"></a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading"><a href="#">Tensorflow / KERAS</a>&nbsp;<span class="badge">New</span></h4>
-						Tensorflow / KERAS 는 ... 사용가능 합니다. 
-					</div>
-				</div>
-				<hr>
-				<div class="media">
-					<div class="media-left">
-						<a href="#"><img class="media-object" src="images/3_.jpg" alt="Tensorflow JavaScript"></a>
-					</div>
-					<div class="media-body">
-						<h4 class="media-heading"><a href="#">Tensorflow Lite</a>&nbsp;<span class="badge">New</span></h4>
-						Tensorflow Lite 는 ... 사용가능 합니다.
-					</div>
-				</div>
-
 			</div>
 		</div>
+		</p>
 
+		<p>
+		<div class="tensorsite-block tensorsite-block--plain" style = "padding: 5px 150px 0px 3px;">
+			<div class="tensorsite-block__image-wrapper">
+			<img class="tensorsite-block__image" src="images/정프로.png" alt=""  width='200'>
+			</div>
 
+			<div class="tensorsite-content ">
+			<h4 class="tensorsite-content__title  " id="Tensorflow keras" data-text="Tensorflow keras">
+			<strong>정 프로</strong></h4>
+				<div class="tensorsite-content__description">
+					<p>예) 파일럿프로젝트 진행기간 회의록을 작성해왔으며 조원간 의사소통 / 의견조율에 기여함 . tensorflow / kera를 분석/검토하며 이런저런 기술을 습득.  차후 관심분야 & 해보고싶은것 : 어쩌구 저쩌구, </p>
+				</div>
+			</div>
+		</div>
+		</p>
+		
+		<p>
+		<div class="tensorsite-block tensorsite-block--plain" style = "padding: 5px 150px 0px 3px;" >
+			<div class="tensorsite-block__image-wrapper">
+			<img class="tensorsite-block__image" src="images/전프로.png" alt=""  width='200'>
+			</div>
 
-	</div>
+			<div class="tensorsite-content ">
+			<h4 class="tensorsite-content__title  " id="Tensorflow lite" data-text="Tensorflow lite">
+			<strong>전 프로</strong></A></h4>
+				<div class="tensorsite-content__description">
+					<p>예) 파일럿프로젝트 진행기간 회의록을 작성해왔으며 조원간 의사소통 / 의견조율에 기여함 . tensorflow / kera를 분석/검토하며 이런저런 기술을 습득.  차후 관심분야 & 해보고싶은것 : 어쩌구 저쩌구, </p>
+				</div>
+			</div>
+		</div>
+		</p>
+		
+		<p>
+		<div class="tensorsite-block tensorsite-block--plain" style = "padding: 5px 150px 0px 3px;" >
+			<div class="tensorsite-block__image-wrapper">
+			<img class="tensorsite-block__image" src="images/조프로.jpg" alt=""  width='200'>
+			</div>
+
+			<div class="tensorsite-content ">
+			<h4 class="tensorsite-content__title  " id="Tensorflow lite" data-text="Tensorflow lite">
+			<strong>조 프로</strong></A></h4>
+				<div class="tensorsite-content__description">
+					<p>서기, tensorflow keras 분석 담당으로, 프로젝트 진행기간 동안 회의록을 작성해왔으며 조원간 의사소통 및 의견조율에 기여함.</p>
+					<p>tensorflow / keras를 분석 및 검토하며 웹, 혹은 모바일에서 동작하는 마스크 출입 통제 시스템이 아닌 로컬에서 동작하는 시스템을 구축하기 위한 기반기술을 마련함.</p>
+					<p>차후 OpenCV 등의 영상처리 라이브러리 분석을 통해 tensorflow / keras에서의 영상 처리를 추가하고싶음. 또한 단순한 기능 동작에서 벗어나 실제 로컬에서 동작하는 프로그램으로 변환 할 예정.</p>
+				</div>
+			</div>
+		</div>
+		</p>
+		
+      </div>
 
 	<footer style="background-color: #000000; color: #ffffff">
 		<div class="container">
