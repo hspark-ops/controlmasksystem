@@ -12,30 +12,31 @@ init() {
     const modelURL = URL + "model.json";
     const metadataURL = URL + "metadata.json";
 
-    // load the model and metadata
-    // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-    // or files from your local hard drive
-    // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+    // 모델과 메타 데이터를 load 한다.
+    // pose 라이브러리가 "tmImage" 객체를 window에 추가한다.
     model = await tmImage.load(modelURL, metadataURL);
-    maxPredictions = model.getTotalClasses();
+    // 모델을 로드한 후에는 모델의 총 클래스 수를 얻을 수 있다.
+	maxPredictions = model.getTotalClasses();
+	
 
-    // Convenience function to setup a webcam
-    const flip = true; // whether to flip the webcam
-    webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
-    await webcam.setup(); // request access to the webcam
-    await webcam.play();
-    window.requestAnimationFrame(loop);
+    // 웹캠 편의 기능 설정 부분
+    const flip = true; // 웹캠의 반전 여부
+    webcam = new tmImage.Webcam(400, 400, flip); // 웹캠의 넓이, 높이, 반전여부
+    await webcam.setup(); // 웹캠 setup(셋업 혹은 접속) 요청
+    await webcam.play(); // 웹캠 play
+    window.requestAnimationFrame(loop);	// 브라우저에게 수행하길 원하는 애니메이션을 알리고 다음 리페인팅이 진행되기 전에 해당 애니메이션을 업데이트 하는 과정.
 
-    // append elements to the DOM
+    // elements를 DOM에 추가.
+	// webcam-container 및 webcam.canvas 속성을 추가
     document.getElementById("webcam-container").appendChild(webcam.canvas);
     labelContainer = document.getElementById("label-container");
-    for (let i = 0; i < maxPredictions; i++) { // and class labels
+    for (let i = 0; i < maxPredictions; i++) { // "div"의 HTML 요소를 만들어 반환
         labelContainer.appendChild(document.createElement("div"));
     }
 }
 
 async function loop() {
-    webcam.update(); // update the webcam frame
+    webcam.update(); //webcam frame을 업데이트
     await predict();
     window.requestAnimationFrame(loop);
 }
@@ -44,23 +45,24 @@ async function update() {
     webcam.update(); 
 }
 
-// run the webcam image through the image model
+// 이미지 모델에 웹캠 이미지를 실행
 async function predict() {
-    // predict can take in an image, video or canvas html element
+    // html의 요소인 이미지, 비디오, 캔버스를 포함 할 수 있다.
     const prediction = await model.predict(webcam.canvas);
 
  
-    //maskon
+    //mask-On
     const classPrediction_maskon = prediction[0].probability.toFixed(2)*100 ;
     //labelContainer.childNodes[1].innerHTML = "<h1>" + classPrediction_maskon +"%" +"<h1>";
     document.getElementsByTagName("progress")[0].value=classPrediction_maskon;
+	// 탐색을 통해 "progress"와 일치하는 값을 찾음.
 
  
-    //maskoff
+    //mask-Off
     const classPrediction_maskoff = prediction[1].probability.toFixed(2)*100 ;
     //labelContainer.childNodes[1].innerHTML = "<h1>" + classPrediction_maskoff +"%" +"<h1>";
     document.getElementsByTagName("progress")[1].value=classPrediction_maskoff;
-
+	// 탐색을 통해 "progress"와 일치하는 값을 찾음.
     
 
 
