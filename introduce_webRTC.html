@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width", initial-scale="1">
+	<title>controlMaskSystem</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/controlMaskSystem.css">
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+	<script type="text/javascript" src="tensor.js"></script>  
+
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="index.html">CMS</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
+					<li><a href="introduce_hororoc.html">조원</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">기술<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="tensorflow_js.html">Tensorflow JavaScript</a></li>
+							<li><a href="python_keras.html">Tensorflow/KERAS</a></li>
+							<li><a href="tensorflow_lite.html">Tensorflow Lite</a></li>
+							<li><a href="introduce_webRTC.html">webRTC</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">접속하기<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">로그인</a></li>
+							<li><a href="#">회원가입</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<style>
+	.max-small {
+	    width: auto; height: auto;
+	    max-width: 600px;
+	    max-height: 600px;
+	}
+	.one-lineheight {
+	    line-height:1.5
+	}
+	
+	.tensorsite-container {
+		margin: 80px auto;
+		max-width: 1420px;
+		width: 120%;
+	}
+		
+	.tensorsite-group__inner {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		margin: -15px auto;
+	}
+	.tensorsite-block tensorsite-block--plain{
+    margin-bottom: 20px;
+    margin-top: 20px;
+	margin: 15px;
+    text-align: center;
+	}
+
+	.tensorsite-block--plain, .tensorsite-block--plain-links {
+    margin-bottom: 10px;
+    margin-top: 10px;
+	}
+	
+	.tensorsite-block .tensorsite-content__description {
+    font-family: "Roboto",sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+	}
+	</style>
+	<div style="none : 1px dashed #BDBDBD; width:950px; margin:auto;">
+	
+	
+	<br/>
+	<h1><center><strong>
+		<span style="color:#ff7f00; font-size:1.5em;"> 마스크 쓰기 생활화</span><p></p>
+		<span style="color:#000000; font-size:1.5em;"> 호로록조가 함께 합니다.</span><p></p>
+	</strong></center></h1>
+	<br/>
+	<br/>
+	<h2>WebRTC(Web Real-Time Communication)</h2>
+	<h5 class='one-lineheight'> WebRTC을 통해, 현대의 웹 애플리케이션은 수백만 명의 사람들에게 오디오와 비디오 컨텐츠를 쉽게 스트리밍 할 수 있습니다.</h5>
+	<h5 class='one-lineheight'> 2011년 5월 출시되었고, 아직 개발 중이며 기준도 바뀌고 있습니다.
+	<ul style="line-height:2">
+	<li><a href="http://tools.ietf.org/wg/rtcweb/"><strong>IETF (Internet Engineering Task Force)</strong>: http://tools.ietf.org/wg/rtcweb/</a></li>
+	<li><a href="http://www.w3.org/2011/04/webrtc/"><strong>W3C (World Wide Web Consortium)</strong>: http://www.w3.org/2011/04/webrtc/</a></li>
+	<li><a href="http://www.webrtc.org/"><strong>오픈소스</strong>: http://www.webrtc.org/</a></li>
+	</ul>
+	</h5>
+	<h5 class='one-lineheight'> WebRTC는 다른 웹 브라우저에 대한 Peer-To-Peer 연결을 빠르고 쉽게 설정 할 수 있도록 해줍니다.</h5>
+	<h5 class='one-lineheight'> WebRTC는 이 모든 것이 브라우저의 기본 제공으로 제공됩니다.</h5>
+	<h5 class='one-lineheight'> WebRTC API에는 미디어 캡처, 인코딩 및 디코딩, 오디오 및 비디오, 전송 계층, 세션 관리 등이 포함 됩니다.</h5>
+	
+	<br/>
+	<h2>Basic Scheme</h2>
+	
+	<p>
+		<div class="tensorsite-block tensorsite-block--plain" style = "padding: 5px 150px 0px 3px;" >
+			<div class="tensorsite-block__image-wrapper">
+			<img class="tensorsite-block__image" src="images/basic.PNG" alt="">
+			</div>
+		</div>
+	</p>
+		
+	<br/>
+	<h2>WebRTC Architecture</h2>
+	
+	<p><center>
+		<div class="tensorsite-block tensorsite-block--plain" style = "padding: 5px 150px 0px 3px;" >
+			<div class="tensorsite-block__image-wrapper">
+			<img class="tensorsite-block__image" src="images/WebRTCArchitecture.png" alt="">
+			</div>
+		</div>
+		</center>
+	</p>
+        <div class="tensorsite-group__header">
+		<div class="tensorsite-content ">
+		
+		<br/>
+		<h2 class="tensorsite-content__title  " id="사용 기술" data-text="사용 기술">
+		사용 사례</h2>
+		
+		<div class="tensorsite-content__description">
+        <p>문자 기반 채팅, 화면 및 파일 공유, 게임, 비디오 채팅 등을 포함한 새로운 범위의 어플리케이션
+		</p>
+		<ul style="line-height:2">
+		<li><strong>real-time marketing</strong></li>
+		<li><strong>real-time advertising</strong></li>
+		<li><strong>back office communications (CRM, ERP, SCM, FFM)</strong></li>
+		<li><strong>social networking</strong></li>
+		<li><strong>HR management</strong></li>
+		<li><strong>dating services</strong></li>
+		<li><strong>online medical consultations</strong></li>	
+		<li><strong>financial services</strong></li>
+		<li><strong>surveillance</strong></li>
+		<li><strong>multiplayer games</strong></li>
+		<li><strong>live broadcasting</strong></li>
+		<li><strong>e-learning</strong></li>
+		</ul>
+		</div>
+		
+		</div>
+		</div>
+	</div>	
+	<br/>
+
+	<footer style="background-color: #000000; color: #ffffff">
+		<div class="container">
+			<br>
+			<div class="row">
+				<div class="col-sm-2"><h4>Copyright &copy; 2020</h4><h4>호로록조(hororoc)</h4></div>
+				<div class="col-sm-3"><h4>호로록조 소개</h4><p>조장 : 박PRO<br> 조원 : 전PRO, 정PRO, 조PRO</p></div>
+				<div class="col-sm-3"><h4>네비게이션</h4>
+					<div class="list-group">
+						<a href="tensorflow_js.html" class="list-group-item">Tensorflow</a>
+						<a href="python_keras.html" class="list-group-item">Tensorflow keras</a>
+						<a href="tensorflow_lite.html" class="list-group-item">Tensorflow lite</a>
+						<a href="introduce_webRTC.html" class="list-group-item">webRTC</a>
+					</div>
+				</div>
+				<div class="col-sm-3"><h4 style="text-align: center;"><span class="glyphicon glyphicon-ok"></span>&nbsp;by Hororoc</h4></div>
+			</div>
+		</div>
+</body>
+</html>
