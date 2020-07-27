@@ -92,8 +92,42 @@
 	<li><strong>전력 소비</strong>: 네트워크 연결에는 전력이 필요합니다.</li>
 	</ul>
 	
-	<h2>FlatBuffer</h2>
-	<h5 class='one-lineheight'>TensorFlow Lite FlatBuffer 파일은 클라이언트 기기(예: 휴대기기, 내장형 기기)에 배포되면 TensorFlow Lite 인터프리터를 사용하여 로컬로 실행됩니다. 이 변환 프로세스는 아래 다이어그램에 나와 있습니다.</h5>
+	<br/>
+	<h2>개발 워크플로</h2>
+	<h5 class='one-lineheight'>TensorFlow Lite 사용을 위한 워크플로에는 다음 단계가 포함됩니다.</h5>
+	
+	<ol style="line-height:2">
+	<li><strong>모델 선택</strong>: 자체 TensorFlow 모델을 가져오거나 온라인에서 모델을 찾거나 선행 학습된 모델에서 학습시키거나 재학습시킬 모델을 선택합니다.</li>
+	<li><strong>모델 변환</strong>: 맞춤 모델을 사용하는 경우 TensorFlow Lite 변환기와 몇 줄의 Python을 사용하여 모델을 TensorFlow Lite 형식으로 변환합니다.</li>
+	<li><strong>기기에 배포</strong>: 여러 언어의 API와 함께 TensorFlow Lite 인터프리터를 사용하여 기기에서 모델을 실행합니다.</li>
+	<li><strong>모델 최적화</strong>: 모델 최적화 도구를 사용하여 정확도에 미치는 영향을 최소화하면서 모델의 크기를 줄이고 효율성을 증대합니다.</li>
+	</ol>	
+	
+	<br/>
+	<h2>주요 기능</h2>
+	<ul style="line-height:2">
+	<li><strong>기기 내 ML에 맞게 조정된 인터프리터 </strong>: 작은 바이너리 크기로 기기 내 애플리케이션에 최적화된 핵심 연산자 세트를 지원합니다.</li>
+	<li><strong>다양한 플랫폼 지원</strong>: Android 기기, iOS 기기, 내장형 Linux 기기 및 마이크로 컨트롤러를 포함하며 추론 가속화에 플랫폼 API를 활용합니다.</li>
+	<li><strong>여러 언어용 API</strong>: 자바, Swift, Objective-C, C++, Python 등을 지원합니다.</li>
+	<li><strong>고성능 </strong>: 지원되는 기기에서의 하드웨어 가속, 기기에 최적화된 커널 및 사전 융합된 활성화 및 바이어스 기능으로 고성능을 구현합니다..</li>
+	<li><strong>모델 최적화 도구</strong>: 양자화를 비롯하여 다양한 도구를 통해 크기를 줄이고 모델의 성능을 향상하면서도 정확도를 유지할 수 있습니다.</li>
+	<li><strong>효율적인 모델 형식</strong>: 작은 크기 및 이동성에 최적화된 FlatBuffer를 사용합니다.</li>
+	<li><strong>선행 학습된 모델</strong>: 애플리케이션에 맞게 맞춤설정할 수 있는 일반적인 머신러닝 작업을 지원합니다.</li>
+	</ul>
+	
+	<br/>
+	<h2>TensorFlow Lite 인터프리터</h2>
+	<h5 class='one-lineheight'>TensorFlow Lite inference는 일반적으로 다음단계를따른다 :</h5>
+
+	<ol style="line-height:2">
+	<li><strong>Loading a model</strong>: .tflite 모델을 메모리로 로드해야한다.</li>
+	<li><strong>Transforming data</strong>: Raw input 데이터는 모델이 기대하는 input 데이터와 다르기 때문에 데이터 변환이 필요하다. Resize 혹은 이미지 포맷변환 등.</li>
+	<li><strong>Running inference</strong>: TensorFlow Lite API 를 사용해서 모델을 실해앟ㄴ다. 인터프리터 빌드 및 텐서 할당 등의 내용이 포함된다.</li>
+	<li><strong>Interpreting output</strong>: 모델 inference에서 결과를 받으면 응용 프로그램에서 유용한 의미있는 방식으로 해석해야 한다. 예를 들어, 확률을 관련 범주내 매핑하고 최종 사용자에게 제시하는 것은 너의 몫이다.</li>
+	</ol>	
+	
+	<h2>TensorFlow Lite 변환기</h2>
+	<h5 class='one-lineheight'>TensorFlow Lite 변환기는 TensorFlow 모델을 사용하여 TensorFlow Lite FlatBuffer 파일(.tflite)을 생성합니다. TensorFlow Lite FlatBuffer 파일은 클라이언트 기기(예: 휴대기기, 내장형 기기)에 배포되면 TensorFlow Lite 인터프리터를 사용하여 로컬로 실행됩니다. 이 변환 프로세스는 아래 다이어그램에 나와 있습니다.</h5>
 	
 	<img src="images/tflite_flow.PNG" />
 	
