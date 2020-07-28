@@ -32,7 +32,7 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.html">소개<span class="sr-only"></span></a></li>
-					<li><a href="introduce_hororoc.html">조원</a></li>
+					<li><a href="#">조원</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">기술<span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -54,23 +54,82 @@
 			</div>
 		</div>
 	</nav>
-<h3 style="text-align: center; font-weight: bold;">흐름도</h3>
-<image src="images/keras_flow.png" style="display: block; margin-left: auto; margin-right: auto; width: 50%;" />
-<h3 style="text-align: center; font-weight: bold;">소스코드</h3>
-
-<image src="images/keras_code1.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
-<image src="images/keras_code2.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
-<image src="images/keras_code3.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
-<image src="images/keras_code4.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
-<image src="images/keras_code5.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
-<image src="images/keras_code6.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
-<image src="images/keras_code7.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
-<image src="images/keras_code8.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
-<image src="images/keras_code9.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
-<image src="images/keras_code10.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
-<image src="images/keras_code11.PNG" style="display: block; margin-left: auto; margin-right: auto; " />
 	
-<a href="http://10.0.0.133:8888/notebooks/ControlMaskSystem/Tensorflow/keras_demo.ipynb?token=5f70a92feb7b0e77cc0e739013a01e82d7eee738445e8ec2" class="list-group-item"  style="text-align: center; font-weight: bold; font-size: 18px;">데모 시연 링크</a>
+	<style>
+	.max-small {
+	    width: auto; height: auto;
+	    max-width: 600px;
+	    max-height: 600px;
+	}
+	.one-lineheight {
+	    line-height:1.5
+	}
+	</style>
+	
+	<div style="none : 1px dashed #BDBDBD; width:800px; margin:auto;">
+	
+	<br/>
+	<center><h1>TensorFlow Keras</h1></center>
+	<br/>
+	<br/>
+	
+	<h2>Keras는 사용자 친화적입니다</h2>
+	
+	<h5 class='one-lineheight'>Keras는 사용자의 부담을 덜기 위해 일관되고 간결한 API를 제공하며, 사용자의 조작을 최소화 해줍니다.</h5>
+	<h5 class='one-lineheight'>Keras는 쉬운 고수준의 API를 제공하면서도, TensorFlow와 같은 저수준의 API와도 호환이 잘 되어 어떠한 네트워크 구조도 만들 수 있게 합니다.</h5>
+	<h5 class='one-lineheight'>keras를 사용하면 TensorFlow 기반의 작업 흐름에도 통합시킬 수 있습니다.</h5>
+	<br/>
+	
+	<h2>Keras는 업계와 학계 양쪽에서 모두 폭넓게 사용되고 있습니다</h2>
+	
+	<h5 class='one-lineheight'>Keras는 2018년 기준 250,000명 이상의 개인 사용자를 기반으로 TensorFlow를 제외한 그 어떤 딥러닝 프레임워크보다 업계와 학계 모두에 깊게 배어있습니다.</h5>
+	<h5 class='one-lineheight'>Keras API는 tf.keras 모듈을 통해 TensorFlow의 공식 프론트엔드로 사용되고 있습니다.</h5>
+	<br/>
+	
+	<h2>Keras는 모델의 제품화를 쉽게 해줍니다</h2>
+	
+	<h5 class='one-lineheight'>Keras는 다른 어떤 딥러닝 프레임워크보다도 iOS, Android, Raspberry Pi 등 다양한 방면의 플랫폼에 쉽게 배포할 수 있습니다.</h5>
+	<br/>
+	
+	<h2>Keras는 여러 백엔드 엔진을 지원하여 하나의 생태계에 속박되지 않습니다</h2>
+	
+	<h5 class='one-lineheight'>Keras 모델은 여러 딥러닝 백엔드를 지원합니다.</h5>
+	<h5 class='one-lineheight'>내장 레이어로만 구성된 Keras 모델들은 지원하는 모든 백엔드들과 호환이 되어 학습에 사용되는 백엔드와 배포 등을 위한 로드에 사용되는 백엔드가 서로 달라도 된다는 것입니다.</h5>
+	<br/>
+	
+	<h2>Keras는 다중 GPU와 학습의 분산처리를 지원합니다</h2>
+	
+	<h5 class='one-lineheight'>Keras는 다중 GPU 데이터 병렬성에 대한 지원이 내장되어있습니다.</h5>
+	<br/>
+	
+	<h2>Keras의 개발은 딥러닝 생태계의 주요 기업들의 지원을 받습니다</h2>
+	
+	<h5 class='one-lineheight'>Keras는 Google사의 지원을 중심으로 개발되고 있으며, Keras API는 tf.keras로 TensorFlow의 패키지로 제공됩니다.</h5>
+	<h5 class='one-lineheight'>CNTK Keras 백엔드의 유지보수 또한 Microsoft사의 책임하에 이루어집니다.</h5>
+	<h5 class='one-lineheight'>Amazon AWS는 MXNet과 함께 Keras를 관리합니다.</h5>
+	<h5 class='one-lineheight'>NVIDIA, Uber, CoreML을 포함한 Apple사 또한 Keras의 개발에 공헌하였습니다.</h5>
+	<br/>
+	
+	<h2 class='one-lineheight'>흐름도</h3>
+	<image src="images/keras_flow.png" style="display: block; margin-left: auto; margin-right: auto;width: 100%;" />
+	<br/>
+	
+	<h2 class='one-lineheight'>소스코드</h3>
+	<image src="images/keras_code1.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code2.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code3.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code4.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code5.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code6.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code7.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code8.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code9.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code10.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<image src="images/keras_code11.PNG" style="display: block; margin-left: auto; margin-right: auto;" />
+	<br/>
+	</div>
+	
+	<a href="http://10.0.0.133:8888/notebooks/ControlMaskSystem/Tensorflow/keras_demo.ipynb?token=f5dd1ab4aff6db05932be494736240cd2048e7e9e0217413" class="list-group-item"  style="text-align: center; font-weight: bold; font-size: 24px;">데모 시연 링크</a>
 
 	<footer style="background-color: #000000; color: #ffffff">
 		<div class="container">
