@@ -77,18 +77,21 @@
 		#progress-bar {
 			width: 100%;
 			height: 50px;
+			background-color: #f3f3f3;
 		}
-		#progress-bar2 {
-			width: 100%;
-			height: 50px;
-			color: w3-red;
+		#progress[value] {
+			-webkit-appearance: none;
+			appearance: none;
+		}
+		#progress[value]::-webkit-progress-bar {
+			background-color: "green";
 		}
 		
 	</style>
 
 
 <p>MaskOn</p><progress id="progress-bar" value="0" max="100"></progress>
-<p>MaskOff</p><progress id="progress-bar2" value="0" max="100"></progress>
+<p>MaskOff</p><progress id="progress-bar" value="0" max="100"></progress>
 
    <!-- <button type="button" onclick="update()">update</button> -->
 
