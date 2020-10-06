@@ -75,7 +75,6 @@ async function predict() {
     const classPrediction_jyjon = prediction[2].probability.toFixed(2)*100 ;
     document.getElementsByTagName("progress")[2].value=classPrediction_jyjon;
     //JYJ-OFF
-    document.getElementsByTagName("progress")[3].value=classPrediction_maskon;
     const classPrediction_jyjoff = prediction[3].probability.toFixed(2)*100 ;
     document.getElementsByTagName("progress")[3].value=classPrediction_jyjoff;
     //NOT-DETECTED
