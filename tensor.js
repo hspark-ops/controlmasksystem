@@ -66,20 +66,21 @@ async function predict() {
     
 
     //JYT-ON
-    const classPrediction_maskon = prediction[0].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[0].value=classPrediction_maskon;
+    const classPrediction_jyton = prediction[0].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[0].value=classPrediction_jyton;
     //JYT-OFF
-    const classPrediction_maskon = prediction[1].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[1].value=classPrediction_maskon;
+    const classPrediction_jytoff = prediction[1].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[1].value=classPrediction_jytoff;
     //JYJ-On
-    const classPrediction_maskon = prediction[2].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[2].value=classPrediction_maskon;
+    const classPrediction_jyjon = prediction[2].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[2].value=classPrediction_jyjon;
     //JYJ-OFF
-    const classPrediction_maskon = prediction[3].probability.toFixed(2)*100 ;
     document.getElementsByTagName("progress")[3].value=classPrediction_maskon;
+    const classPrediction_jyjoff = prediction[3].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[3].value=classPrediction_jyjoff;
     //NOT-DETECTED
-    const classPrediction_maskon = prediction[4].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[4].value=classPrediction_maskon;
+    const classPrediction_none = prediction[4].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[4].value=classPrediction_none;
 
 
 
