@@ -84,10 +84,10 @@ async function predict() {
     document.getElementsByTagName("progress")[4].value=classPrediction_none;
     */
 
-    //JBR_NO
+    //CYJ_NO
     const classPrediction_jbrno = prediction[0].probability.toFixed(2)*100 ;
     document.getElementsByTagName("progress")[0].value=classPrediction_jbrno;
-    //JYJ_NO
+    //JBR_NO
     const classPrediction_jyjno = prediction[1].probability.toFixed(2)*100 ;
     document.getElementsByTagName("progress")[1].value=classPrediction_jyjno;
     //JYT_NO
