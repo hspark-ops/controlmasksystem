@@ -65,6 +65,8 @@ async function predict() {
 	// // 탐색을 통해 "progress"와 일치하는 값을 찾음.
     
 
+
+    /*
     //JYT-ON
     const classPrediction_jyton = prediction[0].probability.toFixed(2)*100 ;
     document.getElementsByTagName("progress")[0].value=classPrediction_jyton;
@@ -80,9 +82,23 @@ async function predict() {
     //NOT-DETECTED
     const classPrediction_none = prediction[4].probability.toFixed(2)*100 ;
     document.getElementsByTagName("progress")[4].value=classPrediction_none;
+    */
 
-
-
+    //JBR_NO
+    const classPrediction_jbrno = prediction[0].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[0].value=classPrediction_jbrno;
+    //JYJ_NO
+    const classPrediction_jyjno = prediction[1].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[1].value=classPrediction_jyjno;
+    //JYT_NO
+    const classPrediction_jytno = prediction[2].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[2].value=classPrediction_jytno;
+    //PHS_NO
+    const classPrediction_phsno = prediction[3].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[3].value=classPrediction_phsno;
+    //NOT-DETECTED
+    const classPrediction_none = prediction[4].probability.toFixed(2)*100 ;
+    document.getElementsByTagName("progress")[4].value=classPrediction_none;
     
 
   /*
