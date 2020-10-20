@@ -51,54 +51,21 @@ async function predict() {
     const prediction = await model.predict(webcam.canvas);
 
  
-    // //mask-On
-    // const classPrediction_maskon = prediction[0].probability.toFixed(2)*100 ;
-    // //labelContainer.childNodes[1].innerHTML = "<h1>" + classPrediction_maskon +"%" +"<h1>";
-    // document.getElementsByTagName("progress")[0].value=classPrediction_maskon;
-	// // 탐색을 통해 "progress"와 일치하는 값을 찾음.
+    //mask-On
+    const classPrediction_maskon = prediction[0].probability.toFixed(2)*100 ;
+    //labelContainer.childNodes[1].innerHTML = "<h1>" + classPrediction_maskon +"%" +"<h1>";
+    document.getElementsByTagName("progress")[0].value=classPrediction_maskon;
+	// 탐색을 통해 "progress"와 일치하는 값을 찾음.
 
  
-    // //mask-Off
-    // const classPrediction_maskoff = prediction[1].probability.toFixed(2)*100 ;
-    // //labelContainer.childNodes[1].innerHTML = "<h1>" + classPrediction_maskoff +"%" +"<h1>";
-    // document.getElementsByTagName("progress")[1].value=classPrediction_maskoff;
-	// // 탐색을 통해 "progress"와 일치하는 값을 찾음.
+    //mask-Off
+    const classPrediction_maskoff = prediction[1].probability.toFixed(2)*100 ;
+    //labelContainer.childNodes[1].innerHTML = "<h1>" + classPrediction_maskoff +"%" +"<h1>";
+    document.getElementsByTagName("progress")[1].value=classPrediction_maskoff;
+	// 탐색을 통해 "progress"와 일치하는 값을 찾음.
     
 
 
-    /*
-    //JYT-ON
-    const classPrediction_jyton = prediction[0].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[0].value=classPrediction_jyton;
-    //JYT-OFF
-    const classPrediction_jytoff = prediction[1].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[1].value=classPrediction_jytoff;
-    //JYJ-On
-    const classPrediction_jyjon = prediction[2].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[2].value=classPrediction_jyjon;
-    //JYJ-OFF
-    const classPrediction_jyjoff = prediction[3].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[3].value=classPrediction_jyjoff;
-    //NOT-DETECTED
-    const classPrediction_none = prediction[4].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[4].value=classPrediction_none;
-    */
-
-    //CYJ_NO
-    const classPrediction_jbrno = prediction[0].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[0].value=classPrediction_jbrno;
-    //JBR_NO
-    const classPrediction_jyjno = prediction[1].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[1].value=classPrediction_jyjno;
-    //JYT_NO
-    const classPrediction_jytno = prediction[2].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[2].value=classPrediction_jytno;
-    //PHS_NO
-    const classPrediction_phsno = prediction[3].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[3].value=classPrediction_phsno;
-    //NOT-DETECTED
-    const classPrediction_none = prediction[4].probability.toFixed(2)*100 ;
-    document.getElementsByTagName("progress")[4].value=classPrediction_none;
     
 
   /*
